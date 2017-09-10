@@ -1,0 +1,21 @@
+{
+  "name": "redux-payload-validator",
+  "version": "0.0.1",
+  "description": "paylod validate middleware for flux statndard action.",
+  "main": "lib/index.js",
+  "author": "tomoyuki-tanaka",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1"
+
+  },
+  "dependencies": {
+    "flux-standard-action": "^1.2.0"
+  }
+}
