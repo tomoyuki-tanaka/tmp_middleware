@@ -13,3 +13,9 @@ export default function validateMiddleware({ dispatch }){
       : dispatch({ ...action, payload: { message }, error: true })
   }
 }
+
+export function createActionDecorator({ validator }){
+  return function(action) {
+    return { ...action, meta: { ...action.meta, validator } }
+  }
+}
