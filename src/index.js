@@ -2,8 +2,8 @@ import { isFSA } from 'flux-standard-action'
 
 export default function validateMiddleware({ dispatch }){
   return next => action => {
-    const { validator } = action.meta
     const { error } = action
+    const validator = action.meta ? action.meta.validator : false
 
     if (error || !isFSA(action) || !validator) return next(action)
 
@@ -12,11 +12,5 @@ export default function validateMiddleware({ dispatch }){
     return isValid
       ? next(action)
       : dispatch({ ...action, payload: { message }, error: true })
-  }
-}
-
-export function createActionDecorator({ validator }){
-  return function(action) {
-    return { ...action, meta: { ...action.meta, validator } }
   }
 }
