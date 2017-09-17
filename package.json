@@ -9,10 +9,11 @@
     "build": "babel src --out-dir lib"
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.0",
     "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1"
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^4.6.1"
   },
   "dependencies": {
     "flux-standard-action": "^1.2.0"

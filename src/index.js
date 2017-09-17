@@ -11,6 +11,6 @@ export default function validateMiddleware({ dispatch }){
 
     return isValid
       ? next(action)
-      : dispatch({ ...action, payload: { message }, error: true })
+      : dispatch({...action, payload: { message }, error: true })
   }
 }
