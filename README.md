@@ -28,27 +28,7 @@ $ yarn add redux-payload-validator
 ## Usage
 
 ```js
-// store
-/* ...import others ... */
-
-import payloadValidator from 'redux-payload-validator'
-
-export default createStore(
-  rootReducer,
-  initialState,
-  applyMiddleware(
-    payloadValidator,
-    /* ... */
-  )
-)
-```
-
-Should be use [fsa-meta-extender](https://github.com/tomoyuki-tanaka/fsa-meta-extender)
-`fsa-meta-extender` it'll mapping `meta` to same aciton type.
-
-```js
 // validator/index.js
-import metaExtendCreator from 'fsa-meta-extender'
 
 const validator = {
   INCREMENT: count => {  // It will be mappped same action type.
@@ -63,25 +43,25 @@ const validator = {
   }
 }
 
-// Meta name must be 'validator'.
-export default metaExtendCreator(validator, 'valitdator')
+export default validator
 
 ```
 
-We recommend `redux-actions`, but you can use it even in basic action creator.
-
 ```js
-// action
-// use redux-actions
-import {createAction} from 'redux-actions'
-import validator from '../validator'
+// store
+/* ...import others ... */
 
-// wrap your action creator
-export default validator(createAction('INCREMENT'))
+import payloadValidator from 'redux-payload-validator'
+import validator from './validator'
 
-// or basic action creator
-const increment = (count) => ({ type: 'INCREMENT', payload: count })
-export default validator({increment})
+export default createStore(
+  rootReducer,
+  initialState,
+  applyMiddleware(
+    payloadValidator(validator)
+    /* ... */
+  )
+)
 ```
 
 If `isValid` is `false` then middleware add '{error: true}' and change payload to '{ payload: message }'.
