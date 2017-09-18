@@ -1,7 +1,7 @@
 import { isFSA } from 'flux-standard-action'
 
 export default function(validators){
-  return ({ dispatch }) => next => action => {
+  return () => next => action => {
     const { error } = action
     const validator = validators[action.type]
 
@@ -11,7 +11,7 @@ export default function(validators){
       validator(action.payload)
       next(action)
     } catch(e) {
-      dispatch({...action, payload: e, error: true})
+      next({...action, payload: e, error: true})
     }
   }
 }
