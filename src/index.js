@@ -7,10 +7,11 @@ export default function(validators){
 
     if (error || !isFSA(action) || !validator) return next(action)
 
-    const { valid, message } = validator(action.payload)
-
-    return valid
-      ? next(action)
-      : dispatch({...action, payload: { message }, error: true })
+    try {
+      validator(action.payload)
+      next(action)
+    } catch(e) {
+      dispatch({...action, payload: e, error: true})
+    }
   }
 }
