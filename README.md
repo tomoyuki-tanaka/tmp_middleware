@@ -33,10 +33,10 @@ $ yarn add redux-payload-validator
 const validator = {
   INCREMENT: count => {  // It will be mappped same action type.
     if(typeof count === 'number'){
-      return { isValid: true }
+      return { valid: true }
     } else {
       return {
-         isValid: true,
+         valid: false, // If invalid, you don't have to return {valid}.
          message: 'Error! Argument must be number.'
       }
     }
@@ -64,7 +64,7 @@ export default createStore(
 )
 ```
 
-If `isValid` is `false` then middleware add '{error: true}' and change payload to '{ payload: message }'.
+If `valid` is `false` then middleware add '{error: true}' and change payload to '{ payload: message }'.
 
 ```js
 // reducer
@@ -76,7 +76,7 @@ export const initialState = {
 
 export default handleAction('INCREMENT', {
     next(state, action){
-      return { result: 'isValid!' }
+      return { result: 'valid!' }
     },
     throw(state, action){
       return { result: action.payload.message }

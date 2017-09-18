@@ -7,9 +7,9 @@ export default function(validators){
 
     if (error || !isFSA(action) || !validator) return next(action)
 
-    const { isValid, message } = validator(action.payload)
+    const { valid, message } = validator(action.payload)
 
-    return isValid
+    return valid
       ? next(action)
       : dispatch({...action, payload: { message }, error: true })
   }
