@@ -59,7 +59,7 @@ export default createStore(
 )
 ```
 
-If `valid` is `false` then middleware add '{error: true}' and change payload to '{ payload: errorObject }'.
+If throw Error, then middleware add '{error: true}' and change payload to '{ payload: errorObject }'.
 
 ```js
 // reducer

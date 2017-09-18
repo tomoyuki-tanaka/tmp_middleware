@@ -1,6 +1,6 @@
 {
   "name": "redux-payload-validator",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "paylod validate middleware for flux statndard action.",
   "main": "lib/index.js",
   "author": "tomoyuki-tanaka",
