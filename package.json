@@ -1,9 +1,23 @@
 {
   "name": "redux-payload-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "paylod validate middleware for flux statndard action.",
   "main": "lib/index.js",
   "author": "tomoyuki-tanaka",
+  "homepage": "https://github.com/tomoyuki-tanaka/redux-payload-validator",
+  "keywords": [
+    "redux",
+    "validation",
+    "flux-standard-action",
+    "middleware"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomoyuki-tanaka/redux-payload-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomoyuki-tanaka/redux-payload-validator/issues"
+  },
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir lib",
