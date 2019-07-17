@@ -35,6 +35,6 @@
     "sinon-chai": "^2.13.0"
   },
   "dependencies": {
-    "flux-standard-action": "^1.2.0"
+    "flux-standard-action": "^2.1.0"
   }
 }

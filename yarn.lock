@@ -1269,11 +1269,11 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flux-standard-action@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/flux-standard-action/-/flux-standard-action-1.2.0.tgz#d2d41612dde4cebddd11a76cfead8e84fc69ebdc"
+flux-standard-action@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/flux-standard-action/-/flux-standard-action-2.1.0.tgz#23713a545ee49d62bd067e77d63f8c691561c94c"
   dependencies:
-    lodash "^4.0.0"
+    lodash "^4.17.11"
 
 for-each@~0.3.2:
   version "0.3.2"
@@ -1881,7 +1881,7 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.17.11, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
 
